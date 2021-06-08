@@ -174,64 +174,70 @@ static std::string decode(int argc, char* argv[])
     /* */
     if ((argc <= 27) && (argc >= 15))
     {
+        int head1 = atoi(argv[0]);
+        int head2 = atoi(argv[1]);
+        int head3 = atoi(argv[2]);
 
-
-        while ((half_bit_counter > 0) && (argc > 0))
+        if (VALID_HALF_BIT(head1) && VALID_HALF_BIT(head2) && VALID_HALF_BIT(head3))
         {
-            int time = atoi(argv[times_tracker++]);
 
-            argc--;
+            while ((half_bit_counter > 0) && (argc > 0))
+            {
+                int time = atoi(argv[times_tracker++]);
 
-            if (1 == half_bit_counter % 2)
-            {
-                data <<= 1;
-                data += bit_value;
-            }
+                argc--;
 
-            if (VALID_HALF_BIT(time))
-            {
-                half_bit_counter -= 1;
-            }
-            else
-            if (VALID_FULL_BIT(time))
-            {
-                if (half_bit_counter > 1)
+                if (1 == half_bit_counter % 2)
                 {
-                    bit_value = 1 - bit_value;
-                    half_bit_counter -= 2;
+                    data <<= 1;
+                    data += bit_value;
+                }
+
+                if (VALID_HALF_BIT(time))
+                {
+                    half_bit_counter -= 1;
                 }
                 else
-                {
-                    return reply;
-                }
+                    if (VALID_FULL_BIT(time))
+                    {
+                        if (half_bit_counter > 1)
+                        {
+                            bit_value = 1 - bit_value;
+                            half_bit_counter -= 2;
+                        }
+                        else
+                        {
+                            return reply;
+                        }
+                    }
+                    else
+                    {
+                        return reply;
+                    }
+
+                polarity = 1 - polarity;
+
             }
-            else
+
+            if (half_bit_counter > 0)
             {
-                return reply;
+                data <<= 1;
             }
 
-            polarity = 1 - polarity;
+            toggle = (data & (1 << 11U));
 
+            if (toggle != 0U)
+            {
+                toggle = 1;
+            }
+
+            address = ((data >> 6) & 0x1F);
+
+            command = (data & 0x3F);
+
+
+            reply = "toggle:" + std::to_string(toggle) + " address:" + std::to_string(address) + " command:" + std::to_string(command) + "\n\r";
         }
-
-        if (half_bit_counter > 0)
-        {
-            data <<= 1;
-        }
-
-        toggle = (data & (1 << 11U));
-
-        if (toggle != 0U)
-        {
-            toggle = 1;
-        }
-
-        address = ((data >> 6)&0x1F);
-
-        command = (data & 0x3F);
-
-        
-        reply = "toggle:" + std::to_string(toggle) + " address:" + std::to_string(address) + " command:" + std::to_string(command) + "\n\r";
     }
 
     return reply;
