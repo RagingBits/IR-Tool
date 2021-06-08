@@ -112,16 +112,23 @@ namespace Raging_Bits_IR_Tool
             this.licenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gNULicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.githubProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iRToolDatasheetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button_filesend_open = new System.Windows.Forms.Button();
+            this.textBox_filesend_file_to_send = new System.Windows.Forms.TextBox();
+            this.button_sendfile_send = new System.Windows.Forms.Button();
+            this.timer_filesend = new System.Windows.Forms.Timer(this.components);
             this.groupBox_device_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_error)).BeginInit();
             this.tabControl_work.SuspendLayout();
             this.tool_commands.SuspendLayout();
             this.encode_decode.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox_SerialPortList
@@ -278,6 +285,7 @@ namespace Raging_Bits_IR_Tool
             // 
             this.tabControl_work.Controls.Add(this.tool_commands);
             this.tabControl_work.Controls.Add(this.encode_decode);
+            this.tabControl_work.Controls.Add(this.tabPage1);
             this.tabControl_work.Location = new System.Drawing.Point(12, 116);
             this.tabControl_work.Name = "tabControl_work";
             this.tabControl_work.SelectedIndex = 0;
@@ -894,13 +902,13 @@ namespace Raging_Bits_IR_Tool
             this.licenseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gNULicenseToolStripMenuItem});
             this.licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
-            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.licenseToolStripMenuItem.Text = "License";
             // 
             // gNULicenseToolStripMenuItem
             // 
             this.gNULicenseToolStripMenuItem.Name = "gNULicenseToolStripMenuItem";
-            this.gNULicenseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gNULicenseToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.gNULicenseToolStripMenuItem.Text = "GNU license";
             this.gNULicenseToolStripMenuItem.Click += new System.EventHandler(this.gNULicenseToolStripMenuItem_Click_1);
             // 
@@ -909,8 +917,15 @@ namespace Raging_Bits_IR_Tool
             this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.readmeToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.infoToolStripMenuItem.Text = "Info";
+            // 
+            // readmeToolStripMenuItem
+            // 
+            this.readmeToolStripMenuItem.Name = "readmeToolStripMenuItem";
+            this.readmeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.readmeToolStripMenuItem.Text = "Readme";
+            this.readmeToolStripMenuItem.Click += new System.EventHandler(this.readmeToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -918,29 +933,73 @@ namespace Raging_Bits_IR_Tool
             this.githubProjectToolStripMenuItem,
             this.iRToolDatasheetToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // readmeToolStripMenuItem
-            // 
-            this.readmeToolStripMenuItem.Name = "readmeToolStripMenuItem";
-            this.readmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.readmeToolStripMenuItem.Text = "Readme";
-            this.readmeToolStripMenuItem.Click += new System.EventHandler(this.readmeToolStripMenuItem_Click);
             // 
             // githubProjectToolStripMenuItem
             // 
             this.githubProjectToolStripMenuItem.Name = "githubProjectToolStripMenuItem";
-            this.githubProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.githubProjectToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.githubProjectToolStripMenuItem.Text = "Github Project";
             this.githubProjectToolStripMenuItem.Click += new System.EventHandler(this.githubProjectToolStripMenuItem_Click);
             // 
             // iRToolDatasheetToolStripMenuItem
             // 
             this.iRToolDatasheetToolStripMenuItem.Name = "iRToolDatasheetToolStripMenuItem";
-            this.iRToolDatasheetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iRToolDatasheetToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.iRToolDatasheetToolStripMenuItem.Text = "IR Tool datasheet ";
             this.iRToolDatasheetToolStripMenuItem.Click += new System.EventHandler(this.iRToolDatasheetToolStripMenuItem_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button_sendfile_send);
+            this.tabPage1.Controls.Add(this.textBox_filesend_file_to_send);
+            this.tabPage1.Controls.Add(this.button_filesend_open);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1148, 321);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "FileSend";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // button_filesend_open
+            // 
+            this.button_filesend_open.Location = new System.Drawing.Point(979, 60);
+            this.button_filesend_open.Name = "button_filesend_open";
+            this.button_filesend_open.Size = new System.Drawing.Size(75, 23);
+            this.button_filesend_open.TabIndex = 0;
+            this.button_filesend_open.Text = "...";
+            this.button_filesend_open.UseVisualStyleBackColor = true;
+            this.button_filesend_open.Click += new System.EventHandler(this.button_filesend_open_Click);
+            // 
+            // textBox_filesend_file_to_send
+            // 
+            this.textBox_filesend_file_to_send.Location = new System.Drawing.Point(10, 62);
+            this.textBox_filesend_file_to_send.Name = "textBox_filesend_file_to_send";
+            this.textBox_filesend_file_to_send.Size = new System.Drawing.Size(963, 20);
+            this.textBox_filesend_file_to_send.TabIndex = 1;
+            this.textBox_filesend_file_to_send.TextChanged += new System.EventHandler(this.textBox_filesend_file_to_send_TextChanged);
+            // 
+            // button_sendfile_send
+            // 
+            this.button_sendfile_send.Enabled = false;
+            this.button_sendfile_send.Location = new System.Drawing.Point(10, 88);
+            this.button_sendfile_send.Name = "button_sendfile_send";
+            this.button_sendfile_send.Size = new System.Drawing.Size(149, 23);
+            this.button_sendfile_send.TabIndex = 2;
+            this.button_sendfile_send.Text = "Send";
+            this.button_sendfile_send.UseVisualStyleBackColor = true;
+            this.button_sendfile_send.Click += new System.EventHandler(this.button_sendfile_send_Click);
+            // 
+            // timer_filesend
+            // 
+            this.timer_filesend.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -972,6 +1031,8 @@ namespace Raging_Bits_IR_Tool
             this.encode_decode.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1064,6 +1125,12 @@ namespace Raging_Bits_IR_Tool
         private System.Windows.Forms.ToolStripMenuItem readmeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem githubProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iRToolDatasheetToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button_filesend_open;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textBox_filesend_file_to_send;
+        private System.Windows.Forms.Button button_sendfile_send;
+        private System.Windows.Forms.Timer timer_filesend;
     }
 }
 

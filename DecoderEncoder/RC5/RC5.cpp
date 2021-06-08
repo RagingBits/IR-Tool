@@ -131,9 +131,14 @@ static std::string encode(int argc, char* argv[])
             bits_tracker = 0;
             while (bits_tracker < half_bit_counter)
             {
-                reply += " " + std::to_string(time[bits_tracker]);
-
+                reply += std::to_string(time[bits_tracker]);
                 bits_tracker++;
+                if (bits_tracker < half_bit_counter)
+                {
+                    reply += ' ';
+                }
+
+                
             }
 
             reply += "\n\r";

@@ -39,7 +39,7 @@ namespace Raging_Bits_IR_Tool
             public string name { get; set; }
             public int type { get; set; }
             public int min { get; set; }
-            public int max { get; set; } 
+            public int max { get; set; }
         };
 
         struct ir_command_io_t
@@ -127,13 +127,18 @@ namespace Raging_Bits_IR_Tool
         private string decoders_received_raw_data = "";
         private int decoders_decode_stage = 0;
 
+
+        private int file_send_items_counter = 0;
+        private List<string> file_send_items = new List<string>();
+
+
         private void load_commands_list()
         {
 
             //StreamReader command_list = File.OpenText("command_list.cfg");
             string jsonString = File.ReadAllText("command_list.cfg");
 
-            List<ir_command_io_t> list_of__commands =  JsonConvert.DeserializeObject<List<ir_command_io_t>>(jsonString);
+            List<ir_command_io_t> list_of__commands = JsonConvert.DeserializeObject<List<ir_command_io_t>>(jsonString);
 
             foreach (ir_command_io_t cmd in list_of__commands)
             {
@@ -150,7 +155,7 @@ namespace Raging_Bits_IR_Tool
                     {
                         temp.fields.Add(field);
                     }
-                    
+
                 }
                 available_commands.Add(temp);
             }
@@ -208,7 +213,7 @@ namespace Raging_Bits_IR_Tool
                 {
 
                     load_commands_list();
-                    
+
                     foreach (ir_command_t command in available_commands)
                     {
                         comboBox_command.Items.Add(command.name);
@@ -285,7 +290,7 @@ namespace Raging_Bits_IR_Tool
                 } catch (Exception)
                 {
                 }
-                
+
             }
 
             return data;
@@ -305,7 +310,7 @@ namespace Raging_Bits_IR_Tool
                          join p in ports_info on n equals p["DeviceID"].ToString()
                          select /*n + " - " +*/ p["Caption"]).ToList();
 
-            
+
             if (current_index == -1)
             {
                 current_index = tList.Count - 1;
@@ -316,13 +321,13 @@ namespace Raging_Bits_IR_Tool
             {
                 serial_port_name_current = ports[current_index];
             }
-            else 
+            else
             {
-                current_index = tList.Count-1;
+                current_index = tList.Count - 1;
                 serial_port_name_current = "";
             }
 
-           
+
             comboBox_SerialPortList.DataSource = tList;
             comboBox_SerialPortList.SelectedIndex = current_index;
         }
@@ -335,12 +340,12 @@ namespace Raging_Bits_IR_Tool
             try
             {
                 serial_input = serial_get();
-            } 
-            catch(Exception)
+            }
+            catch (Exception)
             {
                 success = false;
             }
-                
+
 
             if (success && serial_input.Contains("INFO:"))
             {
@@ -355,7 +360,7 @@ namespace Raging_Bits_IR_Tool
                 if (serial_port_speeds_index >= serial_port_speeds.Count)
                 {
                     serial_port_speeds_index = 0;
-                   // current_connection_state = 0;
+                    // current_connection_state = 0;
 
                 }
 
@@ -364,9 +369,9 @@ namespace Raging_Bits_IR_Tool
 
 
                 serial_port.Close();
-                
+
                 serial_port.BaudRate = serial_port_speed;
-                
+
                 success = true;
 
                 try
@@ -431,7 +436,7 @@ namespace Raging_Bits_IR_Tool
                         serial_port.Close();
                     }
 
-                    
+
 
                     serial_port.PortName = serial_port_name_current;
                     serial_port.BaudRate = serial_port_speed;
@@ -468,7 +473,7 @@ namespace Raging_Bits_IR_Tool
                     }
                 }
             }
-            else 
+            else
             {
                 if (current_connection_state == 3)
                 {
@@ -522,7 +527,7 @@ namespace Raging_Bits_IR_Tool
             if (-1 != comboBox_command.SelectedIndex)
             {
                 if (!button_cmd_send.Visible)
-                { 
+                {
                     button_cmd_send.Visible = true;
                 }
 
@@ -665,7 +670,7 @@ namespace Raging_Bits_IR_Tool
 
             while (counter < available_commands[comboBox_command.SelectedIndex].fields.Count)
             {
-                
+
 
                 if (available_commands[comboBox_command.SelectedIndex].fields[counter].type > 1)
                 {
@@ -709,7 +714,7 @@ namespace Raging_Bits_IR_Tool
 
                         command_to_send += List_of_values_strings.Count.ToString();
                     }
-                    else 
+                    else
                     {
 
                         string data = richTextBox_cmd_field10.Text;
@@ -725,7 +730,7 @@ namespace Raging_Bits_IR_Tool
 
                     }
 
-                    
+
                     command_to_send += ',';
                     command_to_send += richTextBox_cmd_field10.Text;
                 }
@@ -822,8 +827,8 @@ namespace Raging_Bits_IR_Tool
                     command_to_send += value;
 
 
-            }
-                
+                }
+
                 counter++;
 
                 if (counter < available_commands[comboBox_command.SelectedIndex].fields.Count)
@@ -1004,7 +1009,7 @@ namespace Raging_Bits_IR_Tool
                     case 9: { value = textBox_protocol_9.Text; } break;
                 }
 
-                if (value != "")
+                if (value != "" &&  value != null)
                 {
                     if (current_work_group == -1)
                     {
@@ -1013,7 +1018,7 @@ namespace Raging_Bits_IR_Tool
 
                     if (current_work_group == available_encoders_decoders[comboBox_protocols.SelectedIndex].fields[field_counter].group)
                     {
-                        if (int.TryParse(value, out int data))
+                        if (value != "" && value != null && int.TryParse(value, out int data))
                         {
                             if ((data > available_encoders_decoders[comboBox_protocols.SelectedIndex].fields[field_counter].max) ||
                             (data < available_encoders_decoders[comboBox_protocols.SelectedIndex].fields[field_counter].min))
@@ -1055,15 +1060,20 @@ namespace Raging_Bits_IR_Tool
 
             string line = proc.StandardOutput.ReadLine();
 
-            if (line != "")
+            if (line != "" && line != null)
             {
-                line = line.Replace(' ',',');
-                List<string> elements =  line.Split(',').ToList();
+                while (line[0] == ' ')
+                {
+                    line = line.Substring(1);
+                }
+
+                line = line.Replace(' ', ',');
+                List<string> elements = line.Split(',').ToList();
 
 
                 if (int.TryParse(textBox_protocol_11.Text, out int data))
                 {
-                    if ((data > MAX_TIMEOUT ) ||
+                    if ((data > MAX_TIMEOUT) ||
                     (data < MIN_TIMEOUT))
                     {
                         MessageBox.Show("Field " + label_protocol_11.Text +
@@ -1103,7 +1113,7 @@ namespace Raging_Bits_IR_Tool
             }
 
 
-            
+
         }
 
         private void button_protocol_decode_Click(object sender, EventArgs e)
@@ -1161,7 +1171,7 @@ namespace Raging_Bits_IR_Tool
                 return;
             }
 
-            serial_send(CMD_AT_DECODE + textBox_protocol_12.Text + "," + textBox_protocol_11.Text +"\r\n");
+            serial_send(CMD_AT_DECODE + textBox_protocol_12.Text + "," + textBox_protocol_11.Text + "\r\n");
         }
 
 
@@ -1198,14 +1208,14 @@ namespace Raging_Bits_IR_Tool
 
                     protocol_index = available_encoders_decoders.Count;
                 }
-                else 
+                else
                 {
                     protocol_index++;
                 }
 
             }
 
-            
+
 
         }
 
@@ -1290,7 +1300,7 @@ namespace Raging_Bits_IR_Tool
             }
             catch (Exception except)
             {
-                
+
             }
 
         }
@@ -1369,7 +1379,7 @@ namespace Raging_Bits_IR_Tool
         {
 
             string target = "https://github.com/RagingBits/IR-Tool";
-        
+
 
             try
             {
@@ -1403,6 +1413,120 @@ namespace Raging_Bits_IR_Tool
             catch (System.Exception other)
             {
                 MessageBox.Show(other.Message);
+            }
+        }
+
+        private void button_filesend_open_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string file = openFileDialog1.FileName;
+
+            if (File.Exists(file))
+            {
+                textBox_filesend_file_to_send.Text = file;
+
+                button_sendfile_send.Enabled = true;
+            }
+        }
+
+        private void textBox_filesend_file_to_send_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void button_sendfile_send_Click(object sender, EventArgs e)
+        {
+
+            if (current_connection_state == 2)
+            {
+                string file = textBox_filesend_file_to_send.Text;
+                if (File.Exists(file))
+                {
+                    button_sendfile_send.Text = "Stop";
+                    current_connection_state = 3;
+                    timer_filesend.Enabled = true;
+
+                    file_send_items = File.ReadAllLines(file).ToList();
+
+                    file_send_items_counter = 0;
+
+                    serial_send(file_send_items[file_send_items_counter++] + "\r\n");
+                }
+            }
+            else 
+            {
+                button_sendfile_send.Text = "Send";
+                //textBox_filesend_file_to_send.Text = "";
+                //button_sendfile_send.Enabled = false;
+                current_connection_state = 2;
+                timer_filesend.Enabled = false;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tabControl_work.SelectedTab != tabControl_work.TabPages[2])
+                {
+                    button_sendfile_send.Text = "Send";
+                    //textBox_filesend_file_to_send.Text = "";
+                    //button_sendfile_send.Enabled = false;
+                    current_connection_state = 1;
+                    timer_filesend.Enabled = false;
+                }
+                else
+                {
+                    switch (decoders_decode_stage)
+                    {
+                        case 0:
+                            {
+                                string search_text = "\r\nOK\r\n";
+                                if (decoders_received_raw_data.Length >= search_text.Length)
+                                {
+                                    int counter = 0;
+                                    while (counter <= (decoders_received_raw_data.Length - search_text.Length))
+                                    {
+                                        if (search_text == decoders_received_raw_data.Substring(counter, search_text.Length))
+                                        {
+                                            /* Remove rest of the data. */
+                                            decoders_received_raw_data = "";
+
+                                            if (file_send_items_counter < file_send_items.Count)
+                                            {
+                                                serial_send(file_send_items[file_send_items_counter++] + "\r\n");
+                                            }
+                                            else
+                                            {
+                                                button_sendfile_send.Text = "Send";
+                                                //textBox_filesend_file_to_send.Text = "";
+                                                //button_sendfile_send.Enabled = false;
+                                                current_connection_state = 2;
+                                                timer_filesend.Enabled = false;
+                                            }
+
+
+                                            break;
+                                        }
+                                        counter++;
+                                    }
+                                }
+                            }
+                            break;
+
+                    }
+                }
+            }
+            catch (Exception except)
+            {
+
             }
         }
     }
