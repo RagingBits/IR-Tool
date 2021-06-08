@@ -36,7 +36,7 @@ static std::string encode(int argc, char* argv[])
     int command2 = -1;
     uint32_t data = 0;
 
-    if (argc == 3)
+    if (argc == 2)
     {
         /* Obtain the values. */
         std::string str = "";
@@ -80,16 +80,16 @@ static std::string encode(int argc, char* argv[])
 
         if ((address >= 0 && address <= 0x1F) && (command >= 0 && command <= 0xFF))
         {
-            data = address & 0xFF;
-            data <<= 5;
-            data += (command & 0x1F);
+            data = address & 0x1F;
             data <<= 8;
+            data += (command & 0xFF);
+            data <<= 2;
             data += ext_chk;/*Value 2.*/
 
             int counter = 15;
             while (counter--)
             {
-                reply += std::to_string(ON_SIZE) + " ";
+                reply += " " + std::to_string(ON_SIZE) + " ";
 
                 if (0 != (data & (1 << counter)))
                 {
@@ -102,20 +102,20 @@ static std::string encode(int argc, char* argv[])
 
             }
 
-            reply += " " + std::to_string(ON_SIZE) + " " + std::to_string(OFF_PAUSE_SIZE) + " ";
+            reply += " " + std::to_string(ON_SIZE) + " " + std::to_string(OFF_PAUSE_SIZE);
 
 
-            data = address & 0xFF;
-            data <<= 5;
-            data += (~command & 0x1F);
+            data = address & 0x1F;
             data <<= 8;
+            data += (~command & 0xFF);
+            data <<= 2;
             data += (~ext_chk & 0x03);/* Value 1.*/
 
             counter = 15;
             while (counter--)
             {
 
-                reply += std::to_string(ON_SIZE) + " ";
+                reply += " " + std::to_string(ON_SIZE) + " ";
 
                 if (0 != (data & (1 << counter)))
                 {
@@ -153,6 +153,8 @@ static std::string decode(int argc, char* argv[])
     int command = 0;
     int address2 = 0;
     int command2 = 0;
+    int ext_chk = 2;
+    int ext_chk2 = 2;
 
     if (argc == 63)
     {
@@ -247,19 +249,22 @@ static std::string decode(int argc, char* argv[])
         }
 
         /* Data is ready, convert and validate. */
-        address = 0x1F & data;/*5bits*/
-        data >>= 5;
+        ext_chk = data & 0x03;
+        data >>= 2;
         command = 0xFF & data;/*8bits*/
         data >>= 8;
-        /* Left in data is now expantion and check, corresponding to value 2. */
+        address = 0x1F & data;/*5bits*/
 
-        address2 = 0x1F & data2;/*5bits*/
-        data2 >>= 5;
+        /* Left in data is now expantion and check, corresponding to value 2. */
+        ext_chk2 = data2 & 0x03;
+        data2 >>= 2;
         command2 = 0xFF & data2;/*8bits*/
         data2 >>= 8;
+        address2 = 0x1F & data2;/*5bits*/
+        
         /* Left in data is now expantion and check, corresponding to value 2. */
 
-        if((data == (~data2&0x03))&&(address == address2)&&(command == (~command2&0xFF)))
+        if((ext_chk == (~ext_chk2&0x03))&&(address == address2)&&(command == (~command2&0xFF)))
         {
             reply = "command:" + std::to_string(command) + " address:" + std::to_string(address) + "\n\r";
         }
