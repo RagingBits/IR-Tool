@@ -176,9 +176,8 @@ static std::string decode(int argc, char* argv[])
     {
         int head1 = atoi(argv[0]);
         int head2 = atoi(argv[1]);
-        int head3 = atoi(argv[2]);
 
-        if (VALID_HALF_BIT(head1) && VALID_HALF_BIT(head2) && VALID_HALF_BIT(head3))
+        if (VALID_HALF_BIT(head1) && VALID_HALF_BIT(head2))
         {
 
             while ((half_bit_counter > 0) && (argc > 0))
