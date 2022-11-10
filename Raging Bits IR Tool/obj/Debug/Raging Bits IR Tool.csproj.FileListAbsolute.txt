@@ -1,7 +1,6 @@
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\Debug\Raging Bits IR Tool.exe.config
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\Debug\Raging Bits IR Tool.exe
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\Debug\Raging Bits IR Tool.pdb
-D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csprojAssemblyReference.cache
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\Debug\Raging_Bits_IR_Tool.Form1.resources
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\Debug\Raging_Bits_IR_Tool.Properties.Resources.resources
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csproj.GenerateResource.cache
@@ -29,3 +28,4 @@ D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\D
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csproj.CopyComplete
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\Debug\Newtonsoft.Json.dll
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\Debug\Newtonsoft.Json.xml
+D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csproj.AssemblyReference.cache

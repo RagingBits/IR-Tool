@@ -1,0 +1,3 @@
+﻿  NEC.cpp
+D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\DecoderEncoder\NEC\NEC.cpp(299,16): warning C4101: 'exception': unreferenced local variable
+  NEC.vcxproj -> D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\DecoderEncoder\NEC\x64\Debug\NEC.exe

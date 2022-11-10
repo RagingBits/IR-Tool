@@ -14,8 +14,8 @@
 #define OFF_0_SIZE (ON_SIZE)
 #define OFF_1_SIZE (3*ON_SIZE)
 
-#define VALID_VALUE(VALUE,REF)  (((VALUE>=(REF/2))&&(VALUE<=(1.5*REF)))?true:false)
-
+//#define VALID_VALUE(VALUE,REF)  (((VALUE>=(REF/2))&&(VALUE<=(1.5*REF)))?true:false)
+#define VALID_VALUE(VALUE,REF)  (((VALUE>=(REF/3))&&(VALUE<=(1.75*REF)))?true:false)
 
 
 /*

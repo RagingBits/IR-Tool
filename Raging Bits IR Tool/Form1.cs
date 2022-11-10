@@ -300,35 +300,35 @@ namespace Raging_Bits_IR_Tool
         {
             /* Search for serial ports and list them in the drop box. */
             string[] ports = SerialPort.GetPortNames();
-            var searcher = new ManagementObjectSearcher("SELECT * FROM WIN32_SerialPort");
+            /*var searcher = new ManagementObjectSearcher("SELECT * FROM WIN32_SerialPort");
 
             var ports_info = searcher.Get().Cast<ManagementBaseObject>().ToList();
-
+            */
             int current_index = comboBox_SerialPortList.SelectedIndex;
-
+            /*
             var tList = (from n in ports
                          join p in ports_info on n equals p["DeviceID"].ToString()
-                         select /*n + " - " +*/ p["Caption"]).ToList();
-
+                         select p["Caption"]).ToList();
+            */
 
             if (current_index == -1)
             {
-                current_index = tList.Count - 1;
+                current_index = ports.Length - 1;
             }
 
 
-            if (current_index != -1 && tList.Count > current_index)
+            if (current_index != -1 && ports.Length > current_index)
             {
                 serial_port_name_current = ports[current_index];
             }
             else
             {
-                current_index = tList.Count - 1;
+                current_index = ports.Length - 1;
                 serial_port_name_current = "";
             }
 
 
-            comboBox_SerialPortList.DataSource = tList;
+            comboBox_SerialPortList.DataSource = ports;
             comboBox_SerialPortList.SelectedIndex = current_index;
         }
 
