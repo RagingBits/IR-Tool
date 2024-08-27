@@ -29,3 +29,33 @@ D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\D
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\Debug\Newtonsoft.Json.dll
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\bin\Debug\Newtonsoft.Json.xml
 D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csproj.AssemblyReference.cache
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\Raging Bits IR Tool.exe.config
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\Raging Bits IR Tool.exe
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\Raging Bits IR Tool.pdb
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\Newtonsoft.Json.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Buffers.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Memory.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Numerics.Vectors.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Text.Encodings.Web.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Text.Json.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.ValueTuple.dll
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\Newtonsoft.Json.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Buffers.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Memory.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Numerics.Vectors.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Text.Encodings.Web.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Text.Json.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\bin\Debug\System.ValueTuple.xml
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\obj\Debug\Raging_Bits_IR_Tool.Form1.resources
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\obj\Debug\Raging_Bits_IR_Tool.Properties.Resources.resources
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csproj.GenerateResource.cache
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csproj.CoreCompileInputs.cache
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.csproj.CopyComplete
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.exe
+D:\STUFF\work\GIT\IR-Tool\Raging Bits IR Tool\obj\Debug\Raging Bits IR Tool.pdb

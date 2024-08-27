@@ -944,13 +944,13 @@ namespace Raging_Bits_IR_Tool
             this.licenseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gNULicenseToolStripMenuItem});
             this.licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
-            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.licenseToolStripMenuItem.Text = "License";
             // 
             // gNULicenseToolStripMenuItem
             // 
             this.gNULicenseToolStripMenuItem.Name = "gNULicenseToolStripMenuItem";
-            this.gNULicenseToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.gNULicenseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gNULicenseToolStripMenuItem.Text = "GNU license";
             this.gNULicenseToolStripMenuItem.Click += new System.EventHandler(this.gNULicenseToolStripMenuItem_Click_1);
             // 
@@ -959,13 +959,13 @@ namespace Raging_Bits_IR_Tool
             this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.readmeToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // readmeToolStripMenuItem
             // 
             this.readmeToolStripMenuItem.Name = "readmeToolStripMenuItem";
-            this.readmeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.readmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.readmeToolStripMenuItem.Text = "Readme";
             this.readmeToolStripMenuItem.Click += new System.EventHandler(this.readmeToolStripMenuItem_Click);
             // 
@@ -975,20 +975,20 @@ namespace Raging_Bits_IR_Tool
             this.githubProjectToolStripMenuItem,
             this.iRToolDatasheetToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // githubProjectToolStripMenuItem
             // 
             this.githubProjectToolStripMenuItem.Name = "githubProjectToolStripMenuItem";
-            this.githubProjectToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.githubProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.githubProjectToolStripMenuItem.Text = "Github Project";
             this.githubProjectToolStripMenuItem.Click += new System.EventHandler(this.githubProjectToolStripMenuItem_Click);
             // 
             // iRToolDatasheetToolStripMenuItem
             // 
             this.iRToolDatasheetToolStripMenuItem.Name = "iRToolDatasheetToolStripMenuItem";
-            this.iRToolDatasheetToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.iRToolDatasheetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.iRToolDatasheetToolStripMenuItem.Text = "IR Tool datasheet ";
             this.iRToolDatasheetToolStripMenuItem.Click += new System.EventHandler(this.iRToolDatasheetToolStripMenuItem_Click);
             // 
@@ -1019,7 +1019,7 @@ namespace Raging_Bits_IR_Tool
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Raging Bits IR Tool SW V1.0";
+            this.Text = "Raging Bits IR Tool SW V1.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox_device_info.ResumeLayout(false);
             this.groupBox_device_info.PerformLayout();

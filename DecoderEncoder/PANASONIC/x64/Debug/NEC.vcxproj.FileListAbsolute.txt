@@ -1,0 +1,2 @@
+D:\STUFF\work\VisualStudio_projects\RagingBits_IR_Tool\DecoderEncoder\NEC\x64\Debug\NEC.exe
+D:\STUFF\work\GIT\IR-Tool\DecoderEncoder\PANASONIC\x64\Debug\Panasonic.exe

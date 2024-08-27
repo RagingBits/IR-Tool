@@ -27,25 +27,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_227BAF51B78490604DCE5467A16ABAA2"
+        "OwnerKey" = "8:_193BFF1138D04917944C51765C271C37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_32D79597B437477B9589BEE99F29D13A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4B73BE2FC084B7C8F850D236A13EEDAB"
-        "OwnerKey" = "8:_193BFF1138D04917944C51765C271C37"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5FE243F0AB524B948CEA75838E3282F2"
+        "MsmKey" = "8:_42D045DEF59942458A0516A5636E95E3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9E4F9AB841F1401B9AE084FA838B498E"
+        "MsmKey" = "8:_74F35F889D05430BA2D4C2FFF9E1214D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -70,6 +70,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B7F51885B9004B8C9076567F91012E3C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B87A2EC1EF7E4BCF89255D210F9C4EDE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -100,7 +106,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4B73BE2FC084B7C8F850D236A13EEDAB"
+        "OwnerKey" = "8:_227BAF51B78490604DCE5467A16ABAA2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -249,6 +255,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_227BAF51B78490604DCE5467A16ABAA2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_227BAF51B78490604DCE5467A16ABAA2"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_53F4D21D57E44792AC92FF7ED8C26088"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_32D79597B437477B9589BEE99F29D13A"
             {
             "SourcePath" = "8:..\\..\\DecoderEncoder\\RC5\\Debug\\RC5.exe"
@@ -269,40 +306,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4B73BE2FC084B7C8F850D236A13EEDAB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_42D045DEF59942458A0516A5636E95E3"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4B73BE2FC084B7C8F850D236A13EEDAB"
-                    {
-                    "Name" = "8:Newtonsoft.Json.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Newtonsoft.Json.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_53F4D21D57E44792AC92FF7ED8C26088"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5FE243F0AB524B948CEA75838E3282F2"
-            {
-            "SourcePath" = "8:..\\..\\..\\README.txt"
+            "SourcePath" = "8:..\\README.txt"
             "TargetName" = "8:README.txt"
             "Tag" = "8:"
             "Folder" = "8:_53F4D21D57E44792AC92FF7ED8C26088"
@@ -320,10 +326,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9E4F9AB841F1401B9AE084FA838B498E"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_74F35F889D05430BA2D4C2FFF9E1214D"
             {
-            "SourcePath" = "8:..\\..\\..\\GNU License.txt"
-            "TargetName" = "8:GNU License.txt"
+            "SourcePath" = "8:..\\..\\DecoderEncoder\\PANASONIC\\x64\\Debug\\Panasonic.exe"
+            "TargetName" = "8:Panasonic.exe"
             "Tag" = "8:"
             "Folder" = "8:_53F4D21D57E44792AC92FF7ED8C26088"
             "Condition" = "8:"
@@ -404,6 +410,26 @@
             {
             "SourcePath" = "8:..\\..\\DecoderEncoder\\NEC\\Debug\\NEC.exe"
             "TargetName" = "8:NEC.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_53F4D21D57E44792AC92FF7ED8C26088"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B87A2EC1EF7E4BCF89255D210F9C4EDE"
+            {
+            "SourcePath" = "8:..\\GNU License.txt"
+            "TargetName" = "8:GNU License.txt"
             "Tag" = "8:"
             "Folder" = "8:_53F4D21D57E44792AC92FF7ED8C26088"
             "Condition" = "8:"

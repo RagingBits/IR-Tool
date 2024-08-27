@@ -1,0 +1,5 @@
+﻿D:\APPS\VisualStudio\IDE\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (NEC.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Panasonic.cpp
+D:\STUFF\work\GIT\IR-Tool\DecoderEncoder\PANASONIC\Panasonic.cpp(115,24): warning C4334: '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
+D:\STUFF\work\GIT\IR-Tool\DecoderEncoder\PANASONIC\Panasonic.cpp(286,16): warning C4101: 'exception': unreferenced local variable
+  NEC.vcxproj -> D:\STUFF\work\GIT\IR-Tool\DecoderEncoder\PANASONIC\x64\Debug\Panasonic.exe

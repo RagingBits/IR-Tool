@@ -62,8 +62,8 @@ namespace Raging_Bits_IR_Tool
         {
             public string name { get; set; }
             public int group { get; set; }
-            public int min { get; set; }
-            public int max { get; set; }
+            public Int64  min { get; set; }
+            public Int64 max { get; set; }
         };
 
         struct ir_encoder_decoder_io_t
